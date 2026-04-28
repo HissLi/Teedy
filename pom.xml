@@ -9,6 +9,7 @@
   <version>1.12-SNAPSHOT</version>
 
   <name>Docs Parent</name>
+  <url>file://${session.executionRootDirectory}/target/site/index.html</url>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
@@ -62,6 +63,7 @@
     <org.apache.maven.plugins.maven-surefire-plugin.version>3.0.0</org.apache.maven.plugins.maven-surefire-plugin.version>
     <org.apache.maven.plugins.maven-site-plugin.version>3.12.1</org.apache.maven.plugins.maven-site-plugin.version>
     <org.apache.maven.plugins.maven-project-info-reports-plugin.version>3.5.0</org.apache.maven.plugins.maven-project-info-reports-plugin.version>
+    <org.apache.maven.plugins.maven-pmd-plugin.version>3.28.0</org.apache.maven.plugins.maven-pmd-plugin.version>
     <org.eclipse.jetty.jetty-maven-plugin.version>11.0.20</org.eclipse.jetty.jetty-maven-plugin.version>
   </properties>
 
@@ -140,6 +142,25 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>${org.apache.maven.plugins.maven-project-info-reports-plugin.version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${org.apache.maven.plugins.maven-pmd-plugin.version}</version>
+        <configuration>
+          <linkXRef>false</linkXRef>
+          <rulesets>
+            <ruleset>${session.executionRootDirectory}/config/pmd/practice7-ruleset.xml</ruleset>
+          </rulesets>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>pmd</report>
+            </reports>
+          </reportSet>
+        </reportSets>
       </plugin>
     </plugins>
   </reporting>

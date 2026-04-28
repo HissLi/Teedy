@@ -143,6 +143,58 @@
         <directory>src/main/resources</directory>
       </resource>
     </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>fix-parent-site-module-links</id>
+            <phase>site</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target name="fix-parent-site-module-links">
+                <replace file="${project.basedir}/../target/site/index.html"
+                         token="docs-core/index.html"
+                         value="../../docs-core/target/site/index.html" />
+                <replace file="${project.basedir}/../target/site/index.html"
+                         token="docs-web-common/index.html"
+                         value="../../docs-web-common/target/site/index.html" />
+                <replace file="${project.basedir}/../target/site/index.html"
+                         token="docs-web/index.html"
+                         value="../../docs-web/target/site/index.html" />
+
+                <replace file="${project.basedir}/../target/site/modules.html"
+                         token="./docs-core/index.html"
+                         value="../../docs-core/target/site/index.html" />
+                <replace file="${project.basedir}/../target/site/modules.html"
+                         token="./docs-web-common/index.html"
+                         value="../../docs-web-common/target/site/index.html" />
+                <replace file="${project.basedir}/../target/site/modules.html"
+                         token="./docs-web/index.html"
+                         value="../../docs-web/target/site/index.html" />
+
+                <replace dir="${project.basedir}/../docs-core/target/site"
+                         includes="*.html"
+                         token="href=&quot;../index.html&quot; title=&quot;Docs Parent&quot;"
+                         value="href=&quot;../../../target/site/index.html&quot; title=&quot;Docs Parent&quot;" />
+                <replace dir="${project.basedir}/../docs-web-common/target/site"
+                         includes="*.html"
+                         token="href=&quot;../index.html&quot; title=&quot;Docs Parent&quot;"
+                         value="href=&quot;../../../target/site/index.html&quot; title=&quot;Docs Parent&quot;" />
+                <replace dir="${project.basedir}/../docs-web/target/site"
+                         includes="*.html"
+                         token="href=&quot;../index.html&quot; title=&quot;Docs Parent&quot;"
+                         value="href=&quot;../../../target/site/index.html&quot; title=&quot;Docs Parent&quot;" />
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
   <profiles>
