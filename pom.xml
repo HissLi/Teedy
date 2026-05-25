@@ -121,38 +121,16 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <tags>
-            <tag>
-              <name>api</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiName</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiGroup</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiParam</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiSuccess</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiError</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiPermission</name>
-              <placement>a</placement>
-            </tag>
-            <tag>
-              <name>apiVersion</name>
-              <placement>a</placement>
-            </tag>
+            <tag><name>api</name><placement>a</placement></tag>
+            <tag><name>apiDefine</name><placement>a</placement></tag>
+            <tag><name>apiDescription</name><placement>a</placement></tag>
+            <tag><name>apiError</name><placement>a</placement></tag>
+            <tag><name>apiGroup</name><placement>a</placement></tag>
+            <tag><name>apiName</name><placement>a</placement></tag>
+            <tag><name>apiParam</name><placement>a</placement></tag>
+            <tag><name>apiPermission</name><placement>a</placement></tag>
+            <tag><name>apiSuccess</name><placement>a</placement></tag>
+            <tag><name>apiVersion</name><placement>a</placement></tag>
           </tags>
         </configuration>
       </plugin>
