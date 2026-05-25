@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Custom PMD ruleset for CS304 Practice 7.
+        Includes rules for LoC, CC, WMC, CBO, and LCOM metrics.
+    </description>
+
+    <!-- Lines of Code (LoC) - NCSSCount (Non-Commenting Source Statements) -->
+    <rule ref="category/java/design.xml/NcssCount" />
+
+    <!-- Lines of Code (LoC) - Excessive Method Length -->
+    <rule ref="category/java/design.xml/ExcessiveMethodLength" />
+
+    <!-- Lines of Code (LoC) - Excessive Class Length -->
+    <rule ref="category/java/design.xml/ExcessiveClassLength" />
+
+    <!-- Cyclomatic Complexity (CC) -->
+    <rule ref="category/java/design.xml/CyclomaticComplexity" />
+
+    <!-- Cyclomatic Complexity - Modified Cyclomatic Complexity -->
+    <rule ref="category/java/design.xml/ModifiedCyclomaticComplexity" />
+
+    <!-- Weighted Methods per Class (WMC) - Excessive Public Count -->
+    <rule ref="category/java/design.xml/ExcessivePublicCount" />
+
+    <!-- Coupling Between Objects (CBO) -->
+    <rule ref="category/java/design.xml/CouplingBetweenObjects" />
+
+    <!-- Coupling Between Objects - Excessive Imports -->
+    <rule ref="category/java/design.xml/ExcessiveImports" />
+
+    <!-- Lack of Cohesion in Methods (LCOM) - Law of Demeter -->
+    <rule ref="category/java/design.xml/LawOfDemeter" />
+
+</ruleset>
