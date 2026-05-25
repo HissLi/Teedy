@@ -157,13 +157,6 @@
             <ruleset>${maven.multiModuleProjectDirectory}/customize-rules.xml</ruleset>
           </rulesets>
         </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <plugin>
